@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <!-- Start icon aosem -->
+           <link rel="stylesheet"
+           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
+           referrerpolicy="no-referrer" />
+           <!-- End icon aosem -->
+    <title>Portugal Legands</title>
+</head>
+
+<body>
+    <!-- start nav bar -->
+    <div class="Header">
+        <div class="container">
+            <a href="index.html" alt="">
+                <img class="logo" src="images/logo.jfif" />
+            </a>
+            <div class="links">
+                <span class="icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <!-- <li><a href="index.html"> portolio</a></li>
+              <li><a href="index.html"> About</a></li>
+              <li><a href="index.html"> Content</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- End nav bar -->
+
+        <style>
+            /* Start Global Rules */
+            :root {
+
+                --main-color: #10cab7;
+                --sec-color: #2c4755;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            * {
+
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+            }
+
+            body {
+                font-family: "Work Sans", sans-serif;
+                background-color: #f6f6f6;
+                color: black;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            /* Small */
+            @media (min-width: 768px) {
+                .container {
+                    width: 750px;
+                }
+            }
+
+            /* Medium */
+            @media (min-width: 992px) {
+                .container {
+                    width: 970px;
+                }
+            }
+
+            /* Large */
+            @media (min-width: 1200px) {
+                .container {
+                    width: 1170px;
+                }
+            }
+
+            /* End Global Rules */
+
+            /* start nav bar */
+            .Header {
+                padding: 20px;
+            }
+
+            .Header .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .Header .logo {
+                width: 60px;
+            }
+
+            .Header .links {
+                position: relative;
+            }
+
+            .Header .links:hover .icon span:nth-child(2) {
+
+                width: 100%;
+
+            }
+
+            .Header .links .icon {
+                width: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            .Header .links .icon span {
+                background-color: #333;
+                margin-bottom: 5px;
+                height: 2px;
+            }
+
+            .Header .links .icon span:first-child {
+
+                width: 100%;
+
+            }
+
+            .Header .links .icon span:nth-child(2) {
+
+                width: 60%;
+                transition: 0.3s;
+            }
+
+            .Header .links .icon span:last-child {
+
+                width: 100%;
+
+            }
+
+            .Header .links ul {
+                background-color: #eee;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                top: calc(100% + 15px);
+                min-width: 200px;
+                right: 0;
+                display: none;
+                z-index: 1;
+
+
+
+            }
+
+            .Header .links ul::before {
+
+                content: " ";
+                border-width: 10px;
+                border-style: solid;
+                border-color: transparent transparent #f6f6f6 transparent;
+                position: absolute;
+                right: 5px;
+                top: -20px;
+            }
+
+
+            .Header .links:hover ul {
+
+                display: block;
+
+            }
+
+            .Header .links ul li a {
+
+                display: block;
+                text-decoration: none;
+                padding: 15px;
+                color: #333;
+                transition: 0.5s;
+
+            }
+
+            .Header .links ul li a:hover {
+                padding-left: 20px;
+            }
+
+            .Header .links ul li:not(:last-child) a {
+                border-bottom: 1px solid rgba(114, 111, 111, 0.773);
+            }
+
+            /* End nav bar */
+
+
+            /* start Component */
+
+            .special-heading {
+                color: rgb(138, 138, 138);
+                font-size: 100px;
+                font-weight: 800;
+                letter-spacing: -3px;
+                margin: 0;
+                text-align: center;
+            }
+
+            .special-heading+p {
+                text-align: center;
+                margin: -30px 0 0;
+                color: #797979;
+                font-size: 20px;
+            }
+
+            @media(max-width:767px) {
+                .special-heading {
+                    font-size: 60px;
+
+                }
+
+                .special-heading+p {
+                    margin-top: -20px;
+
+                }
+
+            }
+
+            /* End  Component */
+
+
+            /*  Start portfolio */
+
+
+            .portfolio {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                /* background-color: #f6f6f6; */
+            }
+
+            .portfolio .portfolio-contant {
+
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: 100px;
+                margin-top: 100px;
+            }
+
+            .portfolio .portfolio-contant .card {
+                background-color: white;
+                max-width: 100%;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            /* .portfolio .portfolio-contant .card:hover
+{
+border: 3px solid var(--sec-color);
+
+} */
+
+            .portfolio .portfolio-contant .card img {
+                width: 100%;
+            }
+
+            .portfolio .portfolio-contant .card img {
+                opacity: 0.5;
+
+            }
+
+            .portfolio .portfolio-contant .card img:hover {
+                opacity: 1.0;
+
+            }
+
+            .portfolio .portfolio-contant .card .info {
+                padding: 20px;
+
+            }
+
+            .portfolio .portfolio-contant .card .info h2 {
+                margin: 0;
+                color: red;
+
+            }
+
+            .portfolio .portfolio-contant a {
+                text-decoration: none;
+
+            }
+
+
+
+            .portfolio .portfolio-contant .card .info p {
+                margin-bottom: 0;
+                color: #777;
+                line-height: 1.6;
+
+            }
+
+            @media(max-width:767px) {
+
+                .portfolio .portfolio-contant .card .info h2 {
+                    text-align: center;
+
+                }
+
+
+            }
+
+            .pelee {
+                color: red;
+                font-size: 20px;
+                font-weight: bold;
+
+            }
+
+            .kross {
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            /*  End  portfolio */
+                        /* Start Button backup */
+#gotop{
+position: fixed;
+width: 50px;
+height: 50px;
+background: var(--main-color);
+bottom: 40px;
+right: 50px;
+text-align: center;
+text-decoration: none;
+line-height:50px;
+color: black;
+font-size: 25px;
+}
+
+
+  /* End Button backup */
+
+  /* Start Dark Mode */
+
+#DarkMode{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: var(--main-color);
+    bottom: 40px;
+    left: 50px;
+    text-align: center;
+    text-decoration: none;
+    line-height:50px;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+}
+.dark_mode{
+    background: black;
+    color: white;
+
+}
+    /* End Dark Mode */
+        </style>
+        <!-- Start portfolio -->
+        <div class="portfolio" id="portolio">
+            <div class="containerrrr">
+                <h2 class="special-heading">Portugal Legands</h2>
+                <div class="portfolio-contant">
+
+                    <!-- Start Cristiano Ronaldo -->
+                    <div class="card">
+                        <img src="images/Cristiano Ronaldo Photostream.jfif" alt="">
+                        <div class="info">
+                            <h2>Cristiano Ronaldo</h2>
+                            <p> <span class="pelee">Player Profile:</span><br>
+
+                                Cristiano Ronaldo was born on February 5, 1985 in Funchal, Madeira, Portugal, Portugal.
+                                Manchester United paid £12m to sign Ronaldo in 2003, a record fee for a player of this
+                                age. In the 2004 FA Cup Final, Ronaldo scored the first three goals for Manchester
+                                United and helped them win the championship. In 2008, Ronaldo achieved the franchise
+                                record of scoring goals. In 2009, Real Madrid paid a record $131 million for his
+                                services.<br><br>
+                            <p>
+                                <span class="pelee">Clubs he played with:</span><br>
+                                Sporting Club Lisbon /b/ 2002-2003.<br>
+                                Sporting Club Lisbon 2002-2003.<br>
+                                Manchester United FC 2003-2009.<br>
+                                Real Madrid Club 2009-2018.<br>
+                                Juventus Football Club 2018-2021.<br>
+                                Manchester United FC 2021 - until now.<br>
+                                Portugal national team 2003-present (he also played for the Portugal national under-15,
+                                under-17, under-20, under-21 and under-23 national team).<br>
+                                <span class="pelee">Championships won with his team:</span><br>
+                                <span class="kross"> With Manchester United:</span><br>
+
+
+                                Club World Cup 2008.<br>
+                                UEFA Champions League 2007-2008 season.<br>
+                                The English Premier League three times in the seasons 2006-2007, 2007-2008,
+                                2008-2009.<br>
+                                FA Cup 2003-2004 season.<br>
+                                The EFL Cup twice: 2006 and 2009.<br>
+                                The FA Shield twice, in 2007 and 2008.<br><br>
+
+                                <span class="kross"> With Real Madrid:</span><br>
+
+                                La Liga twice in two seasons: 2011-2012, 2016-2017.<br>
+                                Copa del Rey twice in the years: 2011, 2014.<br>
+                                Spanish Super Cup twice: 2012 and 2017.<br>
+                                Champions League four times in the years: 2014, 2016, 2017, 2018.<br>
+                                The European Super Cup three times in the years: 2014, 2016, 2017.<br>
+                                The Club World Cup three times in 2014, 2016, 2017.<br><br>
+                                <span class="kross"> With Juventus:</span><br>
+                                Serie A twice in two seasons: 2018-2019, 2019-2020.<br>
+                                Italian Cup 2020-2021 season.<br>
+                                Italian Super Cup twice in two years: 2018, 2020<br><br>
+
+                                <span class="kross"> With the Portugal national team:</span><br>
+                                UEFA European Championship 2016.<br>
+                                UEFA Nations League 2019.<br>
+
+                            </p>
+                        </div>
+                    </div>
+                    <!--End Cristiano Ronaldo  -->
+
+                    <!-- Start Carvalho -->
+                    <div class="card">
+                        <img src="images/William Carvalho - Married Wiki Bio.png" alt="">
+                        <div class="info">
+                            <h2>William Carvalho</h2>
+                            <p> <span class="pelee">Player Profile:</span>
+                                William Carvalho was born on 7 April 1992 in Angola. His family moved to Portugal when
+                                he was young, where he started playing football with several clubs before joining
+                                Sporting Lisbon, playing for his age groups before being promoted to the first team in
+                                2011.
+
+                                William Carvalho was loaned to one of the third tier teams in Portugal and then to
+                                Belgium, and after coach Leonardo Jardim arrived at Sporting, he brought the player back
+                                in the 2013-2014 season as Carvalho started to develop well with Sporting that secured
+                                him a key place in the squad.
+
+                                Carvalho played with Portugal in the 2014 World Cup and won the European Championship in
+                                2016, and he is currently participating in the World Cup in Russia.<br>
+                                <span class="pelee"> Achievements:</span>
+                                1)Carvalho moved to Sporting Lisbon where he played in several age groups at the club
+                                before ascending to the first team in 2011. William made his debut on 3 April 2011
+                                against Vitoria Setúbal in the Portuguese league, before going on loan to FC Fatima in
+                                the division The third, where he played 13 matches in which he scored 3 goals.<br><br>
+
+
+                                2) Internationally, Carvalho played his first match with the Portuguese national team in
+                                the 2014 World Cup qualifiers against Sweden, and went with the national team to the
+                                tournament that was held in Brazil. He also participated in the European Championship
+                                2016, which Portugal won the title.
+
+                                William Carvalho has been called up to the Portugal squad for the World Cup in Russia.
+
+                        </div>
+                    </div>
+                    <!-- End Carvalho -->
+
+                <!-- Start  Andre Silva-->
+                    <div class="card">
+                        <img src="images/andress.jfif" alt="">
+                        <div class="info">
+                            <h2>Andre Silva </h2>
+                            <p><span class="pelee">Player Profile:</span>
+                                André Silva was born on November 6, 1995, in Bagim de Monte, Portugal. He started
+                                playing young at the age of eight, and at the age of fifteen he joined the Porto team to
+                                play with the youth. Silva lasted four seasons with Porto between the youth and men's
+                                teams before moving to AC Milan in the summer of 2017.
+
+                                In terms of the national team, Silva represented the Portuguese national team in its
+                                different age groups before playing with the first team in its first match in 2016.
+
+                                Silva participated with the Portuguese national team in the Confederations Cup in 2017
+                                and the World Cup in Russia in 2018.<br><br>
+
+                                <span class="pelee"> Achievements:</span>
+                                1) Andre Silva played his first match with the Porto youth team in August 2013, and in
+                                the
+                                following season he played 34 matches with the team and scored 7 goals, to occupy the
+                                thirteenth place with the Porto youth team in the second division.<br><br>
+
+                                2) On December 29, 2015, Silva played his first match for Porto's first team against
+                                Maritimo, and a few days later he made his first match in the Portuguese League. During
+                                his career with Porto, Silva played 125 matches in four seasons, during which he scored
+                                41 goals.<br><br>
+
+                                3) In June 2017, Silva signed a contract to move to AC Milan for $47.5 million, and
+                                played
+                                his first match with the team on July 27 in the European League qualifiers, and later
+                                scored a hat-trick in the second round of qualifying. Despite Silva's strong start with
+                                Milan, he later lost his main position in the squad.<br><br>
+
+                                4) At the international level, Andre Silva played for the Portuguese national team in
+                                all
+                                age groups, and was called up to the Portuguese national team to play his first match on
+                                September 1, 2016 against Gibraltar.<br><br>
+
+                                Silva scored his first goal with the national team against Andorra on October 7, 2016,
+                                and represented the national team in the Confederations Cup in 2017 and then in the
+                                World Cup in Russia 2018.<br><br>
+
+                            </p>
+                        </div>
+                    </div>
+                        <!-- End  Andre Silva-->
+
+                    <div class="card">
+                        <img src="images/Ricardo Quaresma.jfif" alt="">
+                        <div class="info">
+                            <h2>Ricardo Quaresma</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+
+                                Ricardo Quaresma is a Portuguese professional footballer who is very popular due to his
+                                distinctive playing style and superior dribbling skills. He currently plays as a winger
+                                for Turkish club Besiktas and the Portuguese national team.
+                                He started his football career in 1997 in the Sporting Youth Club, known internationally
+                                as Sporting Lisbon, and then moved to many famous international clubs, including
+                                Barcelona, ​​where he spent one season.
+                                Then he moved to Porto, where he spent the best years of his life; Where he participated
+                                in 114 matches, in addition to this, he played for Inter Milan for two seasons, during
+                                which he was loaned to Chelsea FCAfter that, he moved between some clubs, including the
+                                Turkish club Besiktas and the Emirati Al-Ahly club, as well as Porto, but in 2015 he
+                                returned again to the Besiktas club, where he still plays until the present
+                                time..<br><br>
+
+                                <span class="pelee"> Achievements:</span>
+                                1)In 2003, Ricciardo began playing with FC Barcelona for only one season, during which
+                                he played with him during that season as a starting player in ten matches, and eleven
+                                matches in the bench area.
+
+                                Rijkaard was injured on the field in his right foot at the end of the Spanish League,
+                                which prevented him from continuing to play, and as a result of disputes that occurred
+                                with the Catalan club coach, Frank Rijkaard, he decided not to play with the club in the
+                                European Nations Cup in 2004 and left playing with him permanently.<br><br>
+                                2)In 2008, after Portuguese coach Jose Mourinho took over Inter Milan, Ricciardo moved
+                                to Italy to play for the club on a two-year contract, where he was OK during the first
+                                season. In the following season, he was loaned to Chelsea, where he played only five
+                                matches, and then returned to the club's bench.<br><br>
+                                3)His name was included in the Portugal national team squad in 2012, but did not enter
+                                the
+                                field of play. After an absence of two years, he was named in the temporary squad for
+                                the 2014 World Cup, but was later excluded from the final squad.
+
+                                Ricciardo was named to the starting line-up for Euro 2016 and was also selected to
+                                participate in the 2017 Confederations Cup.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/بيبي.jfif" alt="">
+                        <div class="info">
+                            <h2>Pepe</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Kepler Laveran Lima Ferreira, better known as Pepe, is a Portuguese professional
+                                footballer who is considered one of the best defenders in the world. He plays as a
+                                central defender for the Portuguese national team and for the Turkish club Besiktas, and
+                                previously played for the Spanish club Real Madrid, in which he proved his worth in
+                                playing mainly.
+                                He moved to the club's first team (Porto), which he stayed with for two seasons.
+                                Because of his outstanding performance, he signed with FC Porto, one of the largest
+                                Portuguese clubs, where he became one of its most important players and won two
+                                Portuguese League titles and a Portuguese Cup with him.
+                                He moved to Real Madrid, the club in which Pepe star shined, and played with him for ten
+                                years and was considered one of the best football defenders in the world, but despite
+                                that, his football career is a bit dark as a result of the penalties.<br><br>
+
+                                <span class="pelee">Clubs he played with:</span><br>
+
+                                Maritimo Club B 2001-2002.<br>
+                                Maritimo Club 2002-2004.<br>
+                                Porto Club 2004-2007.<br>
+                                Real Madrid FC 2007-2017.<br>
+                                Besiktas Club 2017-2019.<br>
+                                FC Porto 2019- until now.<br>
+                                Portugal national team 2007-present.<br>
+                                <span class="pelee"> Championships won with his team:</span><br>
+                                <span class="kross"> With Proto Club:</span><br>
+
+
+                                Portuguese Premier League twice in the 2005-2006 and 2006-2007 seasons.<br>
+                                Portuguese Cup 2005-2006 season.<br>
+                                Portuguese Super Cup twice: 2004, 2006.<br>
+                                Intercontinental Cup 2004.<br>
+                                <span class="kross"> With Real Madrid:</span><br>
+
+                                La Liga three times in seasons: 2007–08, 2011–12, 2016–17.<br>
+                                Copa del Rey twice in two seasons: 2010–11, 2013–14.<br>
+                                Spanish Super Cup twice: 2008 and 2012.<br>
+                                Champions League three times in the seasons: 2013-14, 2015-16, 2016-17.<br>
+                                UEFA Super Cup 2014.<br>
+                                Club World Cup twice in the years: 2014, 2016.<br>
+                                <span class="kross"> With Portugal: </span><br>
+                                Euro 2016.<br>
+
+
+
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Bernardo Silva.jfif" alt="">
+                        <div class="info">
+                            <h2>Bernardo Silva</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+
+                                Bernardo Mota Vega de Carvalho Silva (Portuguese pronunciation:; born 10 August 1994),
+                                better known as Bernardo Silva. He is a Portuguese footballer who plays in the midfield
+                                for Manchester City and the Portugal national football team.
+
+                                Silva was born in Lisbon, and came from the Benfica Youth Academy. He started playing
+                                for Benfica B in 2013 and was promoted to the first team in 2014, playing a few minutes
+                                with the latter. He was on loan at FC Monaco in Ligue 1 during the 2014–15 season, and
+                                they made the deal permanent in the winter of 2015. After winning the league with them
+                                in 2017, he signed with the English club for £43.5 million. Then he won the Premier
+                                League and the FA Cup in his first seasonIn England, a domestic treble followed the
+                                following season. He played an important role in City becoming the first men's team in
+                                England to win the treble
+                                He was named the best player in Manchester City for 2019
+                                Silva made his debut with the Portugal national team in 2015 having previously
+                                represented the youth categories at U19 and U21. It was completed
+                                He was selected in the Portugal team participating in the 2017 Confederations Cup, the
+                                2018 World Cup and the 2019 Nations League Finals at home, and won
+                                in the last championship.<br><br>
+
+
+                                <span class="pelee">Clubs he played with:</span><br>
+                                2013–2015 Benfica.<br>
+                                2013–2015 Benfica.<br>
+                                2014–2015 FC Monaco.<br>
+                                2015–2017 Monaco.<br>
+                                2017–present Manchester City.<br>
+                                <span class="pelee"> Championships won with his team:</span><br>
+
+                                <span class="kross"> Benfica:</span><br>
+                                Portuguese Premier League: 2013–14.<br>
+                                Portugal Cup: 2013–14.<br>
+                                Portuguese League Cup: 2013–14.<br>
+
+                                <span class="kross"> Manchester City:</span><br>
+
+                                English Premier League: 2017-18, 2018-19.<br>
+                                FA Cup: 2018–19.<br>
+                                EFL Cup: 2017–18, 2018–19, 2020–21.<br>
+                                FA Shield: 2018, 2019.
+                                <br>
+
+                                <span class="kross"> Portugal:</span><br>
+                                UEFA Nations League: 2019.<br>
+                                Confederations Cup Third Place: 2017.<br>
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End portfolio -->
+                              <!-- /* Start Button backup */-->
+<a id="gotop" href="#"><i class="fa-solid fa-up-long"></i></a>
+
+<!--  /* End Button backup */ -->
+
+<a onclick="myFunction()" id="DarkMode"><i class="fa-solid fa-moon"></i></a>
+ <script>
+ function myFunction() {
+ var element = document.body;
+ element.classList.toggle("dark_mode");
+ }
+ </script>
+</body>
+
+</html>

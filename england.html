@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Start icon aosem -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- End icon aosem -->
+    <title>England Legands</title>
+</head>
+
+
+
+
+
+
+<body>
+    <!-- start nav bar -->
+    <div class="Header">
+        <div class="container">
+            <a href="index.html" alt="">
+                <img class="logo" src="images/logo.jfif" />
+            </a>
+            <div class="links">
+                <span class="icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <!-- <li><a href="index.html"> portolio</a></li>
+                        <li><a href="index.html"> About</a></li>
+                        <li><a href="index.html"> Content</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- End nav bar -->
+
+        <style>
+            /* Start Global Rules */
+            :root {
+                --main-color: #10cab7;
+                --sec-color: #2c4755;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Work Sans", sans-serif;
+                background-color: #f6f6f6;
+                color: black;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Small */
+            @media (min-width: 768px) {
+                .container {
+                    width: 750px;
+                }
+            }
+
+            /* Medium */
+            @media (min-width: 992px) {
+                .container {
+                    width: 970px;
+                }
+            }
+
+            /* Large */
+            @media (min-width: 1200px) {
+                .container {
+                    width: 1170px;
+                }
+            }
+
+            /* End Global Rules */
+
+            /* start nav bar */
+            .Header {
+                padding: 20px;
+            }
+
+            .Header .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .Header .logo {
+                width: 60px;
+            }
+
+            .Header .links {
+                position: relative;
+            }
+
+            .Header .links:hover .icon span:nth-child(2) {
+
+                width: 100%;
+
+            }
+
+            .Header .links .icon {
+                width: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            .Header .links .icon span {
+                background-color: #333;
+                margin-bottom: 5px;
+                height: 2px;
+            }
+
+            .Header .links .icon span:first-child {
+
+                width: 100%;
+
+            }
+
+            .Header .links .icon span:nth-child(2) {
+
+                width: 60%;
+                transition: 0.3s;
+            }
+
+            .Header .links .icon span:last-child {
+
+                width: 100%;
+
+            }
+
+            .Header .links ul {
+                background-color: #eee;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                top: calc(100% + 15px);
+                min-width: 200px;
+                right: 0;
+                display: none;
+                z-index: 1;
+
+
+
+            }
+
+            .Header .links ul::before {
+
+                content: " ";
+                border-width: 10px;
+                border-style: solid;
+                border-color: transparent transparent #f6f6f6 transparent;
+                position: absolute;
+                right: 5px;
+                top: -20px;
+            }
+
+
+            .Header .links:hover ul {
+
+                display: block;
+
+            }
+
+            .Header .links ul li a {
+
+                display: block;
+                text-decoration: none;
+                padding: 15px;
+                color: #333;
+                transition: 0.5s;
+
+            }
+
+            .Header .links ul li a:hover {
+                padding-left: 20px;
+            }
+
+            .Header .links ul li:not(:last-child) a {
+                border-bottom: 1px solid rgba(114, 111, 111, 0.773);
+            }
+
+            /* End nav bar */
+
+
+            /* start Component */
+
+            .special-heading {
+                color: rgb(138, 138, 138);
+                font-size: 100px;
+                font-weight: 800;
+                letter-spacing: -3px;
+                margin: 0;
+                text-align: center;
+            }
+
+            .special-heading+p {
+                text-align: center;
+                margin: -30px 0 0;
+                color: #797979;
+                font-size: 20px;
+            }
+
+            @media(max-width:767px) {
+                .special-heading {
+                    font-size: 60px;
+
+                }
+
+                .special-heading+p {
+                    margin-top: -20px;
+
+                }
+
+            }
+
+            /* End  Component */
+
+
+            /*  Start portfolio */
+
+
+            .portfolio {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                /* background-color: #f6f6f6; */
+            }
+
+            .portfolio .portfolio-contant {
+
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: 100px;
+                margin-top: 100px;
+            }
+
+            .portfolio .portfolio-contant .card {
+                background-color: white;
+                max-width: 100%;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            /* .portfolio .portfolio-contant .card:hover
+{
+border: 3px solid var(--sec-color);
+
+} */
+
+            .portfolio .portfolio-contant .card img {
+                width: 100%;
+            }
+
+            .portfolio .portfolio-contant .card img {
+                opacity: 0.5;
+
+            }
+
+            .portfolio .portfolio-contant .card img:hover {
+                opacity: 1.0;
+
+            }
+
+            .portfolio .portfolio-contant .card .info {
+                padding: 20px;
+
+            }
+
+            .portfolio .portfolio-contant .card .info h2 {
+                margin: 0;
+                color: red;
+
+            }
+
+            .portfolio .portfolio-contant a {
+                text-decoration: none;
+
+            }
+
+
+
+            .portfolio .portfolio-contant .card .info p {
+                margin-bottom: 0;
+                color: #777;
+                line-height: 1.6;
+            }
+
+            @media(max-width:767px) {
+                .portfolio .portfolio-contant .card .info h2 {
+                    text-align: center;
+                }
+            }
+
+            .pelee {
+                color: red;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .kross {
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            /*  End  portfolio */
+            /* Start Button backup */
+            #gotop {
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background: var(--main-color);
+                bottom: 40px;
+                right: 50px;
+                text-align: center;
+                text-decoration: none;
+                line-height: 50px;
+                color: black;
+                font-size: 25px;
+            }
+
+
+            /* End Button backup */
+
+            /* Start Dark Mode */
+
+            #DarkMode {
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background: var(--main-color);
+                bottom: 40px;
+                left: 50px;
+                text-align: center;
+                text-decoration: none;
+                line-height: 50px;
+                color: black;
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            .dark_mode {
+                background: black;
+                color: white;
+
+            }
+
+            /* End Dark Mode */
+        </style>
+        <!-- Start portfolio -->
+        <div class="portfolio" id="portolio">
+            <div class="containerrrr">
+                <h2 class="special-heading">England Legands</h2>
+                <div class="portfolio-contant">
+                    <div class="card">
+                        <img src="images/Frank Lampard.jfif" alt="">
+                        <div class="info">
+                            <h2> Frank Lampard</h2>
+                            <p> <span class="pelee">Player Profile:</span>
+                                Frank Lampard is a former professional footballer from England who played as a
+                                midfielder for Chelsea FC and the England national team. He was his club's top scorer,
+                                scoring 211 goals in all matches with him. He is also the player to receive the most
+                                penalties in England.
+                                He scored a record 609 goals in Premier League matches after Ryan Giggs (632) and Gareth
+                                Barry (615), and is the fourth highest scorer with 177 goals. After leaving Chelsea, he
+                                joined the New York NYCFC to play in Major League Soccer. He wrote his autobiography
+                                “Totally Frank” as well as a series of children’s novels detailing his adventures with
+                                football.
+
+                                Regarded as one of the best midfielders of his generation and the best Chelsea player of
+                                his time, many famous team managers have dubbed him the best player in the world,
+                                including Jose Mourinho and Luiz Felipe Scolari.
+                                <br><br>
+                                <span class="pelee"> Clubs he played with:</span><br>
+                                West Ham United FC 1994-2001.<br>
+                                Swansea City FC (on loan from West Ham United) 1995-1996.<br>
+                                Chelsea FC 2001-2014.<br>
+                                Manchester City FC 2014-2015.<br>
+                                New York City Club 2015-2016.<br>
+                                England national team 1999-2014 (he also participated with the England under-21 team in
+                                1997-2000).
+                                <br><br>
+                                <span class="pelee"> Clubs he coached:</span> <br>
+                                Derby County Club 2018-2019. <br>
+                                Chelsea FC 2019-2021. <br>
+                                Everton FC 2021-present.
+                                <br>
+                                <span class="pelee"> Championships won with his team:</span>
+                                <span class="kross"> With West Ham United:</span><br>
+                                Intertoto Cup: 1999.<br>
+                                <span class="kross"> With Chelsea FC:</span><br>
+                                Premier League three times in seasons: 2004–05, 2005–06, 2009–10.<br>
+                                The FA Cup four times in seasons: 2006–07, 2008–09, 2009–10, 2011–12.<br>
+                                The EFL Cup twice in two seasons: 2004–05, 2006–07.<br>
+                                The FA Shield twice: 2005, 2009.<br>
+                                UEFA Champions League season: 2011–12.<br>
+                                European League season: 2012–13.<br>
+
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Steven Gerrard.jfif" alt="">
+                        <div class="info">
+                            <h2>Steven Gerrard</h2>
+                            <p> <span class="pelee">Player Profile:</span>
+                                Steven Gerrard is a professional footballer who has played for Liverpool FC and the
+                                England National Team as a midfielder. He began his coaching career at Liverpool FC
+                                after retiring from professional football, where Gerrard spent eighteen years of his
+                                life playing for this club, and was also captain of the England national team.
+                                After Gerrard left Liverpool, he played for Galaxy, becoming the third player to achieve
+                                more than 500 Champions League appearances while at only one club.
+                                Gerrard played 114 games for England, and was the fourth player to achieve this number
+                                after Peter Shilton, Wayne Rooney and David Beckham. He also played an important role
+                                when he was at Liverpool as a midfielder, scoring 125 goals for the club and 21 goals
+                                with the national team.
+                                Gerrard documented his career in two autobiographical essays titled “Gerrard: My
+                                Autobiography” and “My Story,” and was featured in the British sports drama “Will.”
+                                <br>
+                                <br>
+                                <span class="pelee"> Clubs he coached:</span> <br>
+                                Rangers Club 2018-2021. <br>
+                                Aston Villa Club 2021-present. <br><br>
+
+
+                                <span class="pelee"> Championships won with his team:</span><br>
+                                <span class="kross"> with Liverpool FC:</span><br>
+                                FA Cup twice in two seasons: 2000–01, 2005–06.<br>
+                                Football League Cup three times in seasons: 2000–01, 2002–03, 2011–12.<br>
+                                FA Shield Year: 2006.<br>
+                                UEFA Champions League season: 2004-2005.<br>
+                                European League season: 2000-2001.<br>
+                                European Super Cup year: 2001.<br>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Wayne Rooney.jfif" alt="">
+                        <div class="info">
+                            <h2>Wayne Rooney </h2>
+                            <p><span class="pelee">Player Profile:</span>
+                                Wayne Rooney was born on the 24th of October 1985 in Liverpool, England.
+
+                                His talent for playing emerged from a young age, as he scored 99 goals for a local club
+                                when he was nine years old.
+
+                                He signed his first professional contract in 2002 with Everton and two years later he
+                                moved to Manchester United to become one of his legends, with him he won five Premier
+                                League titles, four titles in the Community Shield, three titles in the League Cup and a
+                                title in the Champions League, European League, FA Cup The Club World Cup.
+
+                                He returned to club Everton in the summer of 2017.
+                                <br>
+                                Lamm was known throughout his career for his high morals, and he never even received a
+                                red card.
+                                <br>
+                                Among the most famous achievements of Lahm winning the Champions League and the World
+                                Cup.
+                                <br><br>
+                            <p>
+
+                                <span class="pelee">Clubs he coached:</span><br>
+                                Derby Country Club (2021-2020).<br>
+
+
+                                <span class="pelee"> The clubs he played with:</span><br>
+                                Everton (2004-2002).<br>
+                                Manchester United (2004-2017).<br>
+                                Everton (2018-2020).<br>
+
+                                <span class="kross"> With Manchester United:</span><br>
+                                Premier League (2006, 2007, 2008, 2010, 2012).<br>
+                                The English Football Association Shield : 2007, 2010, 2011, 2016.<br>
+                                European Champions League:2007 .<br>
+                                Club World Cup: 2008.<br>
+                                FA Cup:2015. <br>
+                                The EFL Cup three times: 2005, 2009, 2016.<br>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/David Beckham.jfif" alt="">
+                        <div class="info">
+                            <h2>David Beckham</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                David Beckham, soccer player and advertising face for many international brands. Born in
+                                1975, in London, he has shown a unique talent since kicking the ball for the first time
+                                in his life. Beckham played at the age of eighteen for the legendary English team
+                                Manchester United, to begin his actual start at the age of twenty.
+
+                                In 2003, he moved to the Spanish club Real Madrid, to return to the Los Angeles Galaxy
+                                L.A. Galaxy in 2007, after signing a contract with them worth $250 million for a period
+                                of five years.
+
+                                In 1997 he met Victoria Adams, with whom he fell in love until they were married in
+                                1999.
+
+                                In May 2013, he announced his retirement from football..<br>
+                                <span class="pelee"> Clubs he played with:</span><br>
+                                Manchester United 1993-2003.<br>
+                                Preston North End (on loan from Manchester United) 1994-1995.<br>
+                                Real Madrid 2003-2007.<br>
+                                Los Angeles Galaxy 2007-2012.<br>
+                                Milan (on loan from Los Angeles Galaxy) 2007-2012.<br>
+                                Paris Saint-Germain 2013.<br>
+                                England national team 1996-2009 (he also participated with the England under-18 and
+                                under-21 team).<br>
+                                <span class="pelee"> Championships won with his team:</span><br>
+                                <span class="kross"> With Manchester United:</span><br>
+
+                                Premier League 6 times in seasons: 1995-1996, 1996-1997, 1998-1999, 1999-2000,
+                                2000-2001, 2002-2003.<br>
+                                The FA Cup in the 1995-1996, 1998-1999 seasons.<br>
+                                The FA Cup four times in 1993, 1994, 1996, 1997.<br>
+                                UEFA Champions League 1998-1999 season.<br>
+                                Intercontinental Cup 1999.<br>
+                                1992 FA Youth Cup. <br>
+                                <span class="kross"> With Real Madrid:</span><br>
+                                Spanish League 2006-2007 season.<br>
+                                Spanish Super Cup 2003.<br>
+                                <span class="kross">With the Los Angeles Galaxy Club:</span><br>
+                                The American League Cup twice, in 2011 and 2012.<br>
+                                Western Conference three times in 2009, 2010, 2011.<br>
+                                The shield twice in 2010, 2011.<br>
+                                <span class="kross"> With Paris Saint-Germain:</span><br>
+                                French League 2012-2013 season.<br>
+                                <span class="pelee">Awards:</span><br>
+                                Golden Ball 1999.<br>
+                                FIFA Player of the Year Award: Silver Award 1999, 2001.<br>
+                                Premier League Player of the Month August 1996.<br>
+                                The best playmaker in the English Premier League seasons 1997-1998, 1999-2000,
+                                2000-2001.<br>
+                                Best Young Player, according to the Professional Players Association, 1996-1997 season.<br>
+                                Sir Matt Busby Award for Best Player in the 1996-1997 season.<br>
+                                Honorable Mention Award from the Football Writers Association in 2008.<br>
+                                The best player in England in 2003.<br>
+                                Lineup of the Year from European sports media 1998-1999 season.<br>
+                                Best player in the Champions League 1998-1999 season.<br>
+                                Best midfielder in the Champions League 1998-1999 season.<br>
+                                Team of the Season in the UEFA Champions League 2001-2003 season.<br>
+                                The best goal of the decade in 1996.<br>
+                                Best squad of the decade (from 1992-93 season to 2001-2002 season).<br>
+                                BBC Sports Person of the Year 2001.<br>
+                                BBC Sports Lifetime Achievement Person of the Year 2010.<br>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Jamie Vardy.jfif" alt="">
+                        <div class="info">
+                            <h2>Jamie Vardy</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Jamie Vardy is a famous English footballer, who plays as a striker for Leicester City in
+                                the English Premier League, and is also an important player in the England national
+                                team.
+                                Vardy started playing football in his school days and his first big team was
+                                Stocksbridge Park Steels, he got the chance to play with him for the first time in 2007,
+                                and everyone admired his amazing skills and amazing abilities, then he moved to play in
+                                the Northern Premier League for the Halifax Town team, where he scored 25 A goal in his
+                                first season, which was the reason for him to be named "Player of the Year" for
+                                2010.Vardy was bought by Leicester City in 2012 because of his outstanding talents, and
+                                he helped his team win in 2014 in a big way, scoring goals in 11 consecutive games,
+                                making him the "Premier League Player of the Season" and "FWA Player of the Year", then
+                                by 2015 Moved to a higher level and became a player in the national team.<br>
+                                <span class="pelee"> Clubs he played with:</span><br>
+                                Stocksbridge Park Steels 2007-2010.<br>
+                                Halifax Town Club 2010-2011.<br>
+                                Fleetwood Town Club 2011-2012.<br>
+                                Leicester City FC 2012-present.<br>
+                                England national team 2015-present.<br>
+
+                                <span class="pelee"> Championships won with his team:</span><br>
+                                <span class="kross"> With the Halifax Town Club:</span><br>
+                                Northern Premier League Premier League 2010-2011 season.<br>
+
+                                <span class="kross">With Fleetwood Town Club:</span><br>
+                                The fifth English Premier League season 2011-2012.<br>
+                                <span class="kross">With Leicester City:</span><br>
+                                English Premier League 2015-2016 season.<br>
+                                English Premier League 2013-2014 season.<br>
+                                FA Cup 2021.<br>
+                                <span class="pelee">Awards:</span><br>
+                                Player of the Season in the Premier League Season: 2015–16.<br>
+                                Football Writers Association Player of the Year in a season: 2015–16.<br>
+                                Premier League Team of the Season Season: 2015–16.<br>
+                                FIFPro Team 5 Year: 2016.<br>
+                                Premier League Player of the Month four times: October 2015, November 2015, April 2019,
+                                October 2019.<br>
+                                Premier League Goal of the Month Award: March 2018.<br>
+                                BBC Premier League Goal of the Season Season: 2017-18.<br>
+                                Premier League Golden Boot Award Season: 2019–20.<br>
+                                Premier League Player of the Month in the Monthly Conference: November 2011.<br>
+                                The fifth top scorer in the English Premier League season: 2011–12.<br>
+                                Player of the Season in Leicester FC Season: 2019–20.<br>
+                                Leicester City FC Player of the Year twice in two seasons: 2013–14, 2019–20.<br>
+
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/kane.jfif"
+                            alt="">
+                        <div class="info">
+                            <h2>Harry Kane</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Harry Edward Kane is an English professional footballer who currently plays as a top
+                                scorer for the England national football team and Tottenham Hotspur in the Premier
+                                League.
+
+                                He started his football career with Ridgeway Rovers, and then joined the Arsenal Youth
+                                Academy. He worked again with Ridgeway Rovers, and then moved to play with Watford,
+                                before joining Tottenham Hotspur. He terminated his first contract with Tottenham
+                                Hotspur in July 2010, and made his first appearance for the club in the UEFA Champions
+                                League in August 2011.In that period, Tottenham loaned him to Leyton Orient Millwall,
+                                Leicester City and Norwich City, before he was able to make his mark in his first team.
+                                Kane has won a number of trophies, including being the top scorer in the 2015-2016
+                                season and the 2016-2017 season of the Premier League, to be ranked as the best player
+                                in the league for the season three times, and receiving the Golden League Golden Boot
+                                twice, and becoming the best young player of the year for one time. .
+
+                                He started representing England in the Under-17 team, then went on to make his
+                                international debut in the UEFA Champions League qualification match on March 2.<br>
+                                <span class="pelee"> Clubs he played with:</span><br>
+                                Tottenham Hotspur FC 2009-present.<br>
+                                Leyton Orient (on loan from Tottenham) 2011.<br>
+                                Millwall FC (on loan from Tottenham) 2012.<br>
+                                Norwich City FC (on loan from Tottenham) 2012-2013.<br>
+                                Leicester City F.C. (on loan from Tottenham) 2013.<br>
+                                England national team 2015 - to date (he also participated with the England national
+                                under-17, under-19, under-20 and under-21 national team).<br>
+                                <span class="pelee">Championships won with his team:</span><br>
+                                <span class="kross"> With Tottenham Hotspur:</span><br>
+                                League Cup runner-up in the 2014–15 season,<br>
+                                and UEFA Champions League runner-up in the 2018–19 season.<br>
+                                <span class="kross"> With the England national team:</span><br>
+                                fourth place in the 2018 World Cup,<br>
+                                runner-up for the European Nations League (Euro) 2021.<br>
+                                <span class="pelee">Awards:</span><br>
+                                Best Young Player in England Season: 2014–15.<br>
+                                Best player in Tottenham Hotspur season: 2014-15.<br>
+                                The Premier League Golden Boot award three times in the seasons: 2015-16, 2016-17,
+                                2020-21.<br>
+                                Best Playmaker Award in the Premier League season: 2020–21.<br>
+                                FFL Player of the Year Season: 2016–17.<br>
+                                Football Supporters Association Player of the Year: 2017.<br>
+                                England Player of the Year twice in 2017, and 2018.<br>
+                                Fifpro Fifth Team: 2017.<br>
+                                World Cup Golden Boot: 2018 (6 goals).<br>
+                                World Cup Dream Team: 2018.<br>
+                                The Premier League Player of the Year award in London twice: 2018, 2021.<br>
+                                British Empire Order of the Order of the Year 2019.<br>
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End portfolio -->
+        <!-- /* Start Button backup */-->
+        <a id="gotop" href="#"><i class="fa-solid fa-up-long"></i></a>
+
+        <!--  /* End Button backup */ -->
+
+        <a onclick="myFunction()" id="DarkMode"><i class="fa-solid fa-moon"></i></a>
+        <script>
+            function myFunction() {
+                var element = document.body;
+                element.classList.toggle("dark_mode");
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Start icon aosem -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- End icon aosem -->
+    <title>Argantina Legands</title>
+</head>
+
+<body>
+    <!-- start nav bar -->
+    <div class="Header">
+        <div class="container">
+            <a href="index.html" alt="">
+                <img class="logo" src="images/logo.jfif" />
+            </a>
+            <div class="links">
+                <span class="icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <!-- <li><a href="index.html"> portolio</a></li>
+                        <li><a href="index.html"> About</a></li>
+                        <li><a href="index.html"> Content</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- End nav bar -->
+        <style>
+            /* Start Global Rules */
+            :root {
+                --main-color: #10cab7;
+                --sec-color: #2c4755;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Work Sans", sans-serif;
+                background-color: #f6f6f6;
+                color: black;
+            }
+
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Small */
+            @media (min-width: 768px) {
+                .container {
+                    width: 750px;
+                }
+            }
+
+            /* Medium */
+            @media (min-width: 992px) {
+                .container {
+                    width: 970px;
+                }
+            }
+
+            /* Large */
+            @media (min-width: 1200px) {
+                .container {
+                    width: 1170px;
+                }
+            }
+
+            /* End Global Rules */
+
+            /* start nav bar */
+            .Header {
+                padding: 20px;
+            }
+
+            .Header .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .Header .logo {
+                width: 60px;
+            }
+
+            .Header .links {
+                position: relative;
+            }
+
+            .Header .links:hover .icon span:nth-child(2) {
+
+                width: 100%;
+
+            }
+
+            .Header .links .icon {
+                width: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            .Header .links .icon span {
+                background-color: #333;
+                margin-bottom: 5px;
+                height: 2px;
+            }
+
+            .Header .links .icon span:first-child {
+
+                width: 100%;
+
+            }
+
+            .Header .links .icon span:nth-child(2) {
+
+                width: 60%;
+                transition: 0.3s;
+            }
+
+            .Header .links .icon span:last-child {
+
+                width: 100%;
+
+            }
+
+            .Header .links ul {
+                background-color: #eee;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                top: calc(100% + 15px);
+                min-width: 200px;
+                right: 0;
+                display: none;
+                z-index: 1;
+
+
+
+            }
+
+            .Header .links ul::before {
+
+                content: " ";
+                border-width: 10px;
+                border-style: solid;
+                border-color: transparent transparent #f6f6f6 transparent;
+                position: absolute;
+                right: 5px;
+                top: -20px;
+            }
+
+
+            .Header .links:hover ul {
+
+                display: block;
+
+            }
+
+            .Header .links ul li a {
+
+                display: block;
+                text-decoration: none;
+                padding: 15px;
+                color: #333;
+                transition: 0.5s;
+
+            }
+
+            .Header .links ul li a:hover {
+                padding-left: 20px;
+            }
+
+            .Header .links ul li:not(:last-child) a {
+                border-bottom: 1px solid rgba(114, 111, 111, 0.773);
+            }
+
+            /* End nav bar */
+
+
+            /* start Component */
+
+            .special-heading {
+                color: rgb(138, 138, 138);
+                font-size: 100px;
+                font-weight: 800;
+                letter-spacing: -3px;
+                margin: 0;
+                text-align: center;
+            }
+
+            .special-heading+p {
+                text-align: center;
+                margin: -30px 0 0;
+                color: #797979;
+                font-size: 20px;
+            }
+
+            @media(max-width:767px) {
+                .special-heading {
+                    font-size: 60px;
+
+                }
+
+                .special-heading+p {
+                    margin-top: -20px;
+
+                }
+
+            }
+
+            /* End  Component */
+
+
+            /*  Start portfolio */
+
+
+            .portfolio {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                /* background-color: #f6f6f6; */
+            }
+
+            .portfolio .portfolio-contant {
+
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: 100px;
+                margin-top: 100px;
+            }
+
+            .portfolio .portfolio-contant .card {
+                background-color: white;
+                max-width: 100%;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            /* .portfolio .portfolio-contant .card:hover
+    {
+    border: 3px solid var(--sec-color);
+    
+    } */
+
+            .portfolio .portfolio-contant .card img {
+                width: 100%;
+            }
+
+            .portfolio .portfolio-contant .card img {
+                opacity: 0.5;
+
+            }
+
+            .portfolio .portfolio-contant .card img:hover {
+                opacity: 1.0;
+
+            }
+
+            .portfolio .portfolio-contant .card .info {
+                padding: 20px;
+
+            }
+
+            .portfolio .portfolio-contant .card .info h2 {
+                margin: 0;
+                color: red;
+            }
+
+            .portfolio .portfolio-contant a {
+                text-decoration: none;
+
+            }
+
+
+
+            .portfolio .portfolio-contant .card .info p {
+                margin-bottom: 0;
+                color: #777;
+                line-height: 1.6;
+
+            }
+
+            @media(max-width:767px) {
+
+                .portfolio .portfolio-contant .card .info h2 {
+                    text-align: center;
+
+                }
+
+
+            }
+
+            .pelee {
+                color: red;
+                font-size: 20px;
+                font-weight: bold;
+
+            }
+
+            .kross {
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            /*  End  portfolio */
+
+            /* Start Button backup */
+            #gotop {
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background: var(--main-color);
+                bottom: 40px;
+                right: 50px;
+                text-align: center;
+                text-decoration: none;
+                line-height: 50px;
+                color: black;
+                font-size: 25px;
+            }
+
+
+            /* End Button backup */
+
+            /* Start Dark Mode */
+
+            #DarkMode {
+                position: fixed;
+                width: 50px;
+                height: 50px;
+                background: var(--main-color);
+                bottom: 40px;
+                left: 50px;
+                text-align: center;
+                text-decoration: none;
+                line-height: 50px;
+                color: black;
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            .dark_mode {
+                background: black;
+                color: white;
+
+            }
+
+            /* End Dark Mode */
+        </style>
+
+        <!-- Start portfolio -->
+        <div class="portfolio" id="portolio">
+            <div class="containerrrr">
+                <h2 class="special-heading">Argantina Legands</h2>
+                <div class="portfolio-contant">
+                    <div class="card">
+                        <img src="images/Maradona.jfif" alt="">
+                        <div class="info">
+                            <h2> Maradona</h2>
+                            <p> <span class="pelee">Player Profile:</span>
+                                Diego Armando Maradona was born on October 30, 1960 in Buenos Aires, Argentina. Maradona
+                                led club teams to championships in Argentina, Italy, and Spain, and Maradona starred
+                                remarkably in the Argentina national team that won the 1986 World Cup. Despite this, the
+                                football legend's career slack was accompanied by a number of high-level layoffs. Due to
+                                drug abuse, he often struggled with health problems in retirement.
+                                <br><br>
+
+                                <span class="pelee"> Clubs he played with:</span><br>
+                                Argentinos Juniors Club 1976-1981.<br>
+                                Boca Juniors Club 1981-1982.<br>
+                                FC Barcelona 1982-1984.<br>
+                                Napoli Club 1984-1991.<br>
+                                Seville Club 1992-1993.<br>
+                                Newell's Old Boys Club 1993-1994.<br>
+                                Boca Juniors Club 1995-1997.<br>
+                                Argentina national team 1977-1994 (he also participated with the Argentine national
+                                under-20 team in the period between 1977-1979).<br>
+                                <br><br>
+                                <span class="pelee"> Championships won with his team:</span>
+                                <br>
+                                <span class="kross"> With Boca Juniors Club:</span>
+
+                                Argentine First Division League 1981.<br>
+
+                                <span class="kross"> with FC Barcelona:</span><br>
+                                The King's Cup in 1983.<br>
+                                the Spanish League Cup in 1983.<br>
+                                the Spanish Super Cup in 1983.<br>
+
+
+                                <span class="kross"> With FC Napoli:</span><br>
+                                The Italian League in the 1986-1987 seasons,
+                                1989-1990.<br>
+                                the Italian Cup in the 1986-1987
+                                season.<br>
+                                the European League in the 1988-1989 season.
+                                the Italian Super Cup in 1990.<br>
+
+                                <span class="kross">With the Argentina national team:</span><br>
+                                1979 FIFA U-20 World Cup.<br>
+                                1986 World Cup, 1993 Artemio Franchi Cup.<br>
+
+                                <span class="pelee"> Awards:</span><br>
+                                Argentine league top scorer: 1978, 1979, 1980.<br>
+                                Golden Ball at the FIFA U-20 World Cup: 1979.<br>
+                                Silver Boot at the FIFA U-20 World Cup: 1979.<br>
+                                Argentina Player of the Year: 1979, 1980, 1981, 1986.<br>
+                                South American Player of the Year: 1979, 1980.<br>
+                                Olympia de Oro: 1979, 1986.<br>
+                                Guerin Douro (Serie A Player of the Year): 1985.<br>
+                                UNICEF European Footballer of the Season: 1989–90.<br>
+                                World Cup Golden Ball: 1986.<br>
+                                World Cup Silver Boot: 1986.<br>
+                                Most assists in the World Cup: 1986.<br>
+                                World Cup All-Star Team: 1986, 1990.<br>
+                                Gold Onzi Award: 1986, 1987.<br>
+                                Champion of the Champions League from L'Equipe: 1986.<br>
+                                United Press International Athlete of the Year Award: 1986.<br>
+                                World Soccer Player of the Year: 1986.<br>
+                                Capacanonieri (Serie A top scorer): 1987–88.<br>
+                                Italian Cup top scorer: 1987–88.<br>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/messi.jfif" alt="">
+                        <div class="info">
+                            <h2>Lionel Messi</h2>
+                            <p> <span class="pelee">Player Profile:</span>
+                                He was born on June 24, 1987 in Rosario, Argentina. Footballer Lionel Messi moved to
+                                Spain at the age of 13, after FC Barcelona agreed to pay for his treatment as he was
+                                suffering from a hormonal imbalance. Messi became a star in his new country, as he led
+                                his club to the championship. In 2012, Messi set the record for most goals scored in a
+                                calendar year, and in 2016, he was named a European Ballon d'Or winner for the fifth
+                                time.
+                                <br>
+                                <br>
+                                <span class="pelee">Clubs he played with:</span><br>
+
+                                FC Barcelona c 2003-2004.<br>
+                                FC Barcelona B 2004-2005.<br>
+                                FC Barcelona 2004-2021.<br>
+                                Paris Saint-Germain Club 2021 - until now.<br>
+                                Argentina national team 2005 - up to the present time (participated with the national
+                                under-20 team and the under-23 team).<br>
+
+                                <br>
+
+                                <span class="pelee"> Championships won with his team:</span><br>
+                                <span class="kross"> With FC Barcelona:</span><br>
+
+                                La Liga title 10 times in the seasons: 2004-2005, 2005-2006, 2008-2009 2009-2010,
+                                2010-2011, 2012-2013, 2014-2015, 2015-2016, 2017-2018, 2018-2019.
+                                <br>
+                                Copa del Rey 7 times in the seasons: 2008-2009, 2011-2012, 2014-2015, 2015-2016,
+                                2016-2017, 2017-2018, 2020-2021.
+                                <br>
+                                Spanish Super Cup 8 times in the years: 2005, 2006, 2009, 2010, 2011, 2013, 2016, 2018.
+                                Champions League 4 times in seasons: 2005-2006, 2008-2009, 2010-2011, 2014-2015.
+                                <br>
+                                European Super Cup 3 times in the years: 2009, 2011, 2015.
+                                <br>
+                                Club World Cup 3 times in the years: 2009, 2011, 2015.
+                                <br>
+                                <span class="kross"> With Paris Saint-Germain:</span><br>
+
+                                French Super Cup: 2022.<br>
+                                French League: 2022.<br>
+
+                                <span class="kross"> With the Argentina national team:</span><br>
+
+                                FIFA U-20 World Cup with Argentina 2005.<br>
+                                Gold medal in the 2008 Olympics with the Argentina national under-23 women's team.<br>
+                                Copa America with Argentina 2021.<br>
+                                Champions Cup: 2022.<br>
+
+                                <span class="pelee"> Awards:</span><br>
+                                Best player in La Liga 8 times: 2009, 2010, 2011, 2012, 2013, 2015, 2018, 2019.<br>
+                                Best striker in La Liga 7 times: 2009, 2010, 2011, 2012, 2013, 2015, 2016.<br>
+                                La Liga top scorer (7): 2010, 2012, 2013, 2017, 2018, 2019, 2020.<br>
+                                Copa del Rey top scorer (5): 2009, 2011, 2014, 2016, 2017.<br>
+                                UEFA Champions League top scorer (6): 2009, 2010, 2011, 2012, 2015, 2019.<br>
+                                The best player in the UEFA Champions League 2009.<br>
+                                Best striker in the Champions League 2009.<br>
+                                2011 UEFA Champions League Final Man of the Match.<br>
+                                UEFA Champions League Final Man of the Match according to audience: (2) 2009, 2011..<br>
+                                UEFA Team of the Season 11 times: 2008, 2009, 2010, 2011, 2012, 2014, 2015, 2016, 2017,
+                                2018, 2019.<br>
+                                Argentina Player of the Year (Olympia de Plata Award) 12 times: 2005, 2007, 2008, 2009,
+                                2010, 2011, 2012, 2013, 2015, 2016, 2017, 2019.<br><br>
+                                Don Ballon Player of the Year Award: 2007, 2009, 2010,2012,2014,2017,2020.<br>
+
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Di Maria.jfif" alt="">
+                        <div class="info">
+                            <h2>Di Maria </h2>
+                            <p><span class="pelee">Player Profile:</span>
+
+                                Angel Fabian Di Maria, Argentine footballer, is a professional player who plays for
+                                Paris Saint-Germain and the Argentine national team, and plays as a midfielder and
+                                sometimes as a full-back.
+                                Di Maria began his professional career with the Rosario team, then moved to Europe in
+                                2007 to play for Benfica, then moved to Real Madrid in a deal amounting to 25 million
+                                dollars. He played a key role in the team's victory in the Spanish League 2011-2012.
+                                After Real Madrid won the European Championship, he moved to Manchester United in 2014,
+                                but joined Paris Saint-Germain the following year.
+                                With his country's national team, he achieved 90 wins, as well as the goal of winning
+                                his country's gold medal in the 2008 Olympic Games. He played with him in three World
+                                Cups, and three South American championships.
+                                <br><br>
+                            <p>
+                                <span class="pelee"> Clubs he played with:</span><br>
+
+                                Rosario Central Club 2005-2007.<br>
+                                Benfica Club 2007-2010.<br>
+                                Real Madrid Club 2010-2014.<br>
+                                Manchester United F.C. 2014-2015.<br>
+                                Paris Saint-Germain F.C. 2015-2021.<br>
+                                Juventus: 2021 - until now.<br>
+                                Winner of Argentina 2008 - to the present time (he also participated with the national
+                                under-20 and under-23 team).<br>
+
+                                <span class="pelee"> Championships won with his team:</span><br>
+
+                                <span class="kross"> With FC Benfica:</span><br>
+
+                                Portuguese League season: 2009–10.<br>
+                                Portuguese Super Cup twice: 2009, 2010.<br>
+
+                                <span class="kross"> With Real Madrid:</span><br>
+                                La Liga season: 2011–12.<br>
+                                Spanish Super Cup year: 2012.<br>
+                                Copa del Rey twice in two seasons: 2010–11, 2013–14.<br>
+                                UEFA Champions League season: 2013–14.<br>
+                                European Super Cup year: 2014.<br>
+
+                                <span class="kross"> With Paris Saint-Germain:</span><br>
+                                Ligue 1 4 times in the seasons: 2015-16, 2017-18, 2018-19, 2019-20.<br>
+                                French Cup 4 times in seasons: 2015-16, 2016-17, 2017-18, 2019-20.<br>
+                                French League Cup 4 times in the seasons: 2015-16, 2016-17, 2017-18, 2019-20.<br>
+                                French Champions Cup 3 times in the years: 2016, 2018, 2019.<br>
+
+                                <span class="kross"> With the Argentina national team:</span><br>
+                                World Cup runner-up: 2014.<br>
+                                Copa America in 2021, and runner-up twice in 2015 and 2016.<br>
+                                Olympic gold medal with Argentina U-23 team in 2008.<br>
+                                Champions Cup: 2022.<br>
+                                <span class="pelee"> Awards:</span><br>
+                                Portuguese Premier League Player of the Month: April 2010.<br>
+                                UEFA Champions League Team of the Season: 2013–14.<br>
+                                Dream Team in the World Cup Mundial: 2014.<br>
+                                Argentina Player of the Year: 2014.<br>
+                                UEFA Team of the Year Award: 2014.<br>
+                                FIFPro first lineup: 2014.<br>
+                                European Sports Media Team of the Year Season: 2015–16.<br>
+                                Team of the Season in Ligue 1 of the National Professional Football Federation twice in
+                                two seasons: 2015–16, 2018–19.<br>
+                                French Ligue 1 Player of the Month by the FFP: December 2015.<br>
+
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Sergio Aguero.jfif" alt="">
+                        <div class="info">
+                            <h2> Sergio Aguero</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Sergio Aguero is an Argentine footballer who plays for the country's official Argentine
+                                football team and Manchester City Football Club. Sergio is a football enthusiast since
+                                his childhood days in Buenos Aires. He became the youngest Argentine player to play in
+                                the Argentine Primera División at the age of 15, and his skills impressed the club
+                                Atlético de Madrid, which he acquired in 2006.
+                                He scored with Atlético Madrid 101 goals in 234 matches he played with. He also helped
+                                his team greatly in the UEFA Europa League and UEFA Super Cup in 2010. Manchester City
+                                offered him a contract to join his club in 2011 and he accepted the contract and joined
+                                the club, soon breaking many world records and becoming the most expensive scorer among
+                                the players Non-Europeans in the league.<br><br>
+
+
+                                <span class="pelee"> Clubs he played with:</span><br>
+                                Independiente Club 2003-2006.<br>
+                                Club Atlético de Madrid 2006-2011.<br>
+                                Manchester City Club 2011-2021.<br>
+                                FC Barcelona 2021 - until now.<br>
+                                Argentina national team 2006-till present (he also participated with the Argentina
+                                national under-17, under-20 and under-23 team).<br>
+                                <span class="pelee"> Championships won with his team:</span><br>
+
+                                <span class="kross"> With Atletico Madrid:</span><br>
+                                UEFA Europa League 2009-10 season.<br>
+                                2010 European Super Cup.<br>
+
+                                <span class="kross">With Manchester City:</span><br>
+
+                                Premier League five times in seasons: 2011-12, 2013-14, 2017-18, 2018-19, 2020-21.<br>
+                                The League Cup six times in the seasons: 2013–14, 2015–16, 2017–18, 2018–19, 2019–20,
+                                2020–21.<br>
+                                FA Cup 2018-19 season.<br>
+                                The FA Shield three times in the years 2,102, 2018, and 2019.<br>
+
+
+                                <span class="kross"> With the Argentina national team:</span><br>
+
+                                2014 World Cup runner-up.<br>
+                                Copa America in 2021 and runner-up twice in 2015 and 2016.<br>
+                                2008 Olympic gold medal.<br>
+                                The FIFA U-20 World Cup twice, in 2005 and 2007.<br>
+
+                                <span class="pelee"> Awards:</span><br>
+                                South American team year: 2005.<br>
+                                FIFA Young Player of the Year: 2007.<br>
+                                Golden Boot at the FIFA U-20 World Cup: 2007.<br>
+                                Ballon d'Or at the FIFA U-20 World Cup: 2007.<br>
+                                Don Balloon Award Season: 2007–08.<br>
+                                Golden Boy Award from Tuttosport in 2007.<br>
+                                World Soccer Young Player of the Year: 2009.<br>
+                                Premier League Golden Boot Award Season: 2014–15<br>.
+                                Manchester City Player of the Year twice in two seasons: 2011–12, 2014–15.<br>
+                                Goal of the season in Manchester City, season: 2011-12.<br>
+                                Premier League Player of the Month six times in: October 2013, November 2014, January
+                                2016, April 2016, January 2018, February 2019, January 2020.
+                                FIFPro third team three times in the years: 2013, 2015, 2016.<br>
+                                FIFPro Team 4 in 2014.<br>
+                                FIFPro Candidate: 2019 (8th Striker).<br>
+                                CONMEBOL Team of the Decade for the International Federation of Football History and
+                                Statistics 2011–2020 season.<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Paulo Dybala.jfif" alt="">
+                        <div class="info">
+                            <h2> Paulo Dybala</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Paulo Dybala is an Argentine footballer who is known for his flawless style. He started
+                                his sports career in 2011 with the Argentine sports club, the Instituto de Cordoba, then
+                                joined the Italian club “Palermo” in 2012 and continued to play with the team until
+                                2015.
+                                The qualitative leap in his career was in 2015 when he joined Juventus. During his first
+                                season with Juventus, he won the Italian Football Cup and the Italian Super Cup. He is
+                                often seen as the 'new Messi' due to his innovative playing and extraordinary skills. It
+                                was also nicknamed "La Joya", which means "the jewel" in Spanish.
+                                Paulo has always been a talented and professional player, and his technique and ability
+                                to control the ball under any circumstances make him an exceptional player. He is
+                                considered one of the best Argentine footballers ever.<br>
+
+
+
+                                <span class="pelee"> Clubs he played with:</span><br>
+
+
+                                The Instituto Club 2011-2012.<br>
+                                Palermo Club 2012-2015.<br>
+                                Juventus F.C. 2015-2022.<br>
+                                Roma Club 2022 - until now<br>
+                                Argentina national team 2015 - until now.<br>
+
+                                <span class="pelee"> Championships won with his team:</span><br>
+
+                                <span class="kross"> With the Palermo Club:</span><br>
+
+
+                                Italian League Two, season 2013-2014.<br>
+
+
+                                <span class="kross">With Juventus:</span><br>
+                                Serie A 5 times in the 2015-16, 2016-17, 2017-18, 2018-19, 2019-20 seasons.<br>
+                                Coppa Italia 3 times in the 2015-16, 2016-17, 2017-18 seasons.<br>
+                                Italian Super Cup twice in 2015, 2018.<br>
+
+                                <span class="pelee"> Awards:</span><br>
+                                Best assists in Serie A season: 2014–15.<br>
+                                Serie A squad of the year for the seasons: 2015–16, 2016–17, 2017–18.<br>
+                                Serie A Player of the Month: July 2020.<br>
+                                Best Serie A player of the season: 2019–20.<br>
+                                Team of the Year by European Sports Media Season: 2016–17.<br>
+                                Italian Cup top scorer season: 2016-17.<br>
+                                FIFPro squad 2 year: 2017.<br>
+                                FIFPro squad 4 year: 2018.<br>
+                                FIFPro squad 5 year: 2016.<br>
+                                Ballon d'Or: 2017 (15th place).<br>
+                                The Italian Super Cup's all-time top scorer with 4 Ah.<br>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Gabriel Batistuta.jfif"
+                            alt="">
+                        <div class="info">
+                            <h2> Gabriel Batistuta</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Gabriel Batistuta is a retired Argentine footballer, he played as a striker for his
+                                country and is still the all-time top scorer for the Argentine national team. Batistuta
+                                was not interested in football in his childhood, but after Argentina won the World Cup
+                                for the first time in its history in 1978.
+                                He became addicted to the sport and began to take it seriously year after year, playing
+                                for Newell's Old Boys in Argentina and then playing for two of the biggest clubs in
+                                Argentina, River Plate and Boca Juniors. Batistuta shot to stardom when He helped his
+                                country in the Copa America in 1991 through his distinguished performance.<br>
+
+
+                                <span class="pelee"> Clubs he played with:</span><br>
+                                Newell's Old Boys Club 1988-1989.<br>
+                                River Plate Club 1989-1990.<br>
+                                Boca Juniors Club 1990-1991.<br>
+                                Fiorentina Club 1991-2000.<br>
+                                Club of Rome 2000-2003.<br>
+                                Inter Milan (on loan) 2003.<br>
+                                Al Arabi 2003-2005.<br>
+                                Argentina national team 1991-2002.<br>
+
+
+                                <span class="pelee">Championships won with his team:</span><br>
+                                <span class="kross"> With River Plate Club:</span><br>
+                                Argentine league season 1989-1990.<br>
+
+
+                                <span class="kross"> With Boca Juniors Club:</span><br>
+
+                                Argentine league season 1991-1992.<br>
+
+
+                                <span class="kross"> With Fiorentina:</span><br>
+                                Italian League Two, season 1993-1994.<br>
+                                Italian Cup 1995-1996 season.<br>
+                                Italian Super Cup 1996.<br>
+
+
+                                <span class="kross"> With the Club of Rome:</span><br>
+                                Italian Serie A season 2000-2001.<br>  
+                                Italian Super Cup 2001.<br>  
+
+
+                                
+                                <span class="kross"> With his national team Argentina:</span><br>      
+                                
+                                Copa America in 1991 and 1993.<br>
+                                Confederations Cup 1992.<br>
+
+                                <span class="pelee"> Awards:</span><br>
+                                Copa America top scorer 1991, 1995.<br>
+                                Italian Serie A top scorer 1995.<br>
+                                Italian Cup top scorer in the 1995-1996 season.<br>
+                                Top scorer in the Qatari league in the 2003-2004 season.<br>
+                                Bronze Boot at the 1994 World Cup.<br>
+                                Silver Boot at the 1998 World Cup.<br>
+                                The third best player in the world 1999.<br>
+                                Argentina's best player in 1998.<br>
+                                The all-time top scorer for Italian club Fiorentina.<br>
+                                Second place as Argentina's top scorer.<br>
+                                One of the 125 best footballers alive.<br>
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End portfolio -->
+
+        <!-- /* Start Button backup */-->
+        <a id="gotop" href="#"><i class="fa-solid fa-up-long"></i></a>
+
+        <!--  /* End Button backup */ -->
+
+        <a onclick="myFunction()" id="DarkMode"><i class="fa-solid fa-moon"></i></a>
+        <script>
+            function myFunction() {
+                var element = document.body;
+                element.classList.toggle("dark_mode");
+            }
+        </script>
+
+</body>
+
+</html>

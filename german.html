@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- Start icon aosem -->
+       <link rel="stylesheet"
+       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+       integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="crossorigin="anonymous"
+       referrerpolicy="no-referrer" />
+       <!-- End icon aosem -->
+    <title>Germany Legands</title>
+</head>
+
+<body>
+
+
+    <!-- start nav bar -->
+    <div class="Header">
+        <div class="container">
+            <a href="index.html" alt="">
+                <img class="logo" src="images/logo.jfif" />
+              </a>
+            <div class="links">
+                <span class="icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <ul>
+                    <li><a href="index.html"> Home</a></li>
+                    <!-- <li><a href="index.html"> portolio</a></li>
+                    <li><a href="index.html"> About</a></li>
+                    <li><a href="index.html"> Content</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!-- End nav bar -->
+        <style>
+            /* Start Global Rules */
+            :root {
+                --main-color: #10cab7;
+                --sec-color: #2c4755;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            * {
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Work Sans", sans-serif;
+                background-color: #f6f6f6;
+                color: black;
+            }
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            /* Small */
+            @media (min-width: 768px) {
+                .container {
+                    width: 750px;
+                }
+            }
+            /* Medium */
+            @media (min-width: 992px) {
+                .container {
+                    width: 970px;
+                }
+            }
+
+            /* Large */
+            @media (min-width: 1200px) {
+                .container {
+                    width: 1170px;
+                }
+            }
+
+            /* End Global Rules */
+
+            /* start nav bar */
+            .Header {
+                padding: 20px;
+            }
+
+            .Header .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .Header .logo {
+                width: 60px;
+            }
+
+            .Header .links {
+                position: relative;
+            }
+
+            .Header .links:hover .icon span:nth-child(2) {
+
+                width: 100%;
+
+            }
+
+            .Header .links .icon {
+                width: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            .Header .links .icon span {
+                background-color: #333;
+                margin-bottom: 5px;
+                height: 2px;
+            }
+
+            .Header .links .icon span:first-child {
+
+                width: 100%;
+
+            }
+
+            .Header .links .icon span:nth-child(2) {
+
+                width: 60%;
+                transition: 0.3s;
+            }
+
+            .Header .links .icon span:last-child {
+
+                width: 100%;
+
+            }
+
+            .Header .links ul {
+                background-color: #eee;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                top: calc(100% + 15px);
+                min-width: 200px;
+                right: 0;
+                display: none;
+                z-index: 1;
+
+
+
+            }
+
+            .Header .links ul::before {
+
+                content: " ";
+                border-width: 10px;
+                border-style: solid;
+                border-color: transparent transparent #f6f6f6 transparent;
+                position: absolute;
+                right: 5px;
+                top: -20px;
+            }
+
+
+            .Header .links:hover ul {
+
+                display: block;
+
+            }
+
+            .Header .links ul li a {
+
+                display: block;
+                text-decoration: none;
+                padding: 15px;
+                color: #333;
+                transition: 0.5s;
+
+            }
+
+            .Header .links ul li a:hover {
+                padding-left: 20px;
+            }
+
+            .Header .links ul li:not(:last-child) a {
+                border-bottom: 1px solid rgba(114, 111, 111, 0.773);
+            }
+
+            /* End nav bar */
+
+
+            /* start Component */
+
+            .special-heading {
+                color: rgb(138, 138, 138);
+                font-size: 100px;
+                font-weight: 800;
+                letter-spacing: -3px;
+                margin: 0;
+                text-align: center;
+            }
+
+            .special-heading+p {
+                text-align: center;
+                margin: -30px 0 0;
+                color: #797979;
+                font-size: 20px;
+            }
+
+            @media(max-width:767px) {
+                .special-heading {
+                    font-size: 60px;
+
+                }
+
+                .special-heading+p {
+                    margin-top: -20px;
+
+                }
+
+            }
+
+            /* End  Component */
+
+
+            /*  Start portfolio */
+
+
+            .portfolio {
+                padding-top: 60px;
+                padding-bottom: 60px;
+                /* background-color: #f6f6f6; */
+            }
+
+            .portfolio .portfolio-contant {
+
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-gap: 100px;
+                margin-top: 100px;
+            }
+
+            .portfolio .portfolio-contant .card {
+                background-color: white;
+                max-width: 100%;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            /* .portfolio .portfolio-contant .card:hover
+{
+border: 3px solid var(--sec-color);
+
+} */
+
+            .portfolio .portfolio-contant .card img {
+                width: 100%;
+            }
+
+            .portfolio .portfolio-contant .card img {
+            opacity: 0.5;
+
+        }
+
+        .portfolio .portfolio-contant .card img:hover {
+            opacity: 1.0;
+
+        }
+
+            .portfolio .portfolio-contant .card .info {
+                padding: 20px;
+
+            }
+
+            .portfolio .portfolio-contant .card .info h2 {
+                margin: 0;
+                color: red;
+
+            }
+
+            .portfolio .portfolio-contant a {
+                text-decoration: none;
+
+            }
+
+
+
+            .portfolio .portfolio-contant .card .info p {
+                margin-bottom: 0;
+                color: #777;
+                line-height: 1.6;
+
+            }
+
+            @media(max-width:767px) {
+
+                .portfolio .portfolio-contant .card .info h2 {
+                    text-align: center;
+
+                }
+
+
+            }
+
+            .pelee {
+                color: red;
+                font-size: 20px;
+                font-weight: bold;
+
+            }
+
+            .kross {
+                color: black;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            /*  End  portfolio */
+
+            /* Start Button backup */
+#gotop{
+position: fixed;
+width: 50px;
+height: 50px;
+background: var(--main-color);
+bottom: 40px;
+right: 50px;
+text-align: center;
+text-decoration: none;
+line-height:50px;
+color: black;
+font-size: 25px;
+}
+
+
+  /* End Button backup */
+
+  /* Start Dark Mode */
+
+#DarkMode{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: var(--main-color);
+    bottom: 40px;
+    left: 50px;
+    text-align: center;
+    text-decoration: none;
+    line-height:50px;
+    color: black;
+    font-size: 25px;
+    cursor: pointer;
+}
+.dark_mode{
+    background: black;
+    color: white;
+
+}
+    /* End Dark Mode */
+
+        </style>
+
+
+        <!-- Start portfolio -->
+        <div class="portfolio" id="portolio">
+            <div class="containerrrr">
+                <h2 class="special-heading">Germany Legands</h2>
+                <div class="portfolio-contant">
+                    <div class="card">
+                        <img src="images/Toni Kroos of Real Madrid runs with the ball during the La Liga match___.jfif" alt="">
+                        <div class="info">
+                            <h2> Toni Kroos</h2>
+                            <p> <span class="pelee">Player Profile:</span>
+                                Toni Kroos began playing football from a young age with his city club, then moved to
+                                Bayern Munich, with whom he was known to reach fame and maturity. 2014 World Cup with
+                                the German national team.
+                                <br><br>
+                                <span class="pelee"> Clubs he played with:</span>
+                                FC Bayern Munich /b/ 2007-2008.
+                                FC Bayern Munich 2007-2014.
+                                Bayer Leverkusen (on loan) 2009-2010.
+                                Real Madrid CF 2014 - until now.
+                                Germany national team 2010-2021 (he also participated with the German national under-17
+                                team, under-19 and under-21).
+                                <br><br>
+                                <span class="pelee"> Championships won with his team:</span>
+                                <br>
+                                <span class="kross"> With Bayern Munich:</span>
+
+                                Bundesliga three times in the seasons 2007-08, 2012-13, 2013-14.
+                                German Cup three times in the seasons 2007-08, 2012-13, 2013-14.
+                                German Super Cup in 2012.
+                                UEFA Champions League 2012-13 season.
+                                European Super Cup in 2013.<br>
+                                2013 Club World Cup.<br>
+                                <span class="kross"> With Real Madrid:</span>
+
+
+                                La Liga twice in the seasons 2016-17, 2019-20.<br>
+                                The Spanish Super Cup twice in the seasons 2016-17, 2019-20.<br>
+                                Champions League three times in a row in the seasons 2015-16, 2016-17, 2017-18.<br>
+                                The Club World Cup four times in 2014, 2016, 2017, 2018.<br>
+                                <span class="kross"> With Germany:</span>
+                                2014 World Cup, third place in the 2010 World Cup.<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Bastian Schweinsteiger of Bayern Munich with the UEFA Champions___.jfif"
+                            alt="">
+                        <div class="info">
+                            <h2>Bastian Schweinsteiger</h2>
+                            <p> <span class="pelee">Player Profile:</span>
+                                Bastian Schweinsteiger was born on August 1, 1984 in Bavaria, West Germany. Bastian
+                                joined Bayern Munich at the age of eighteen, and played with him 500 matches during 17
+                                years, during which he won many titles, the most important of which were the league and
+                                cup treble and the Champions League in the 2012-2013 season. Bastian moved to Manchester
+                                United in 2015 and then to Chicago Fire in 2017.<br>
+                                His career with the national team stretched from 2004 to 2016, during which he played
+                                121 matches and scored 24 goals, during which he won the World Cup in 2014.
+                                <br>
+                                <br>
+                                <span class="pelee">Clubs he played with:</span>
+
+                                FC Bayern Munich /b/ 2001-2005.<br>
+                                Bayern Munich 2002-2015.<br>
+                                Manchester United FC 2015-2017.<br>
+                                Chicago Fire Club 2017-2019.<br>
+                                Germany national team 2004-2016 (he also participated with the German national under-16,
+                                under-18, under-19 and under-21 national team).
+
+                                <br>
+                                <br>
+                                <span class="pelee"> Championships won with his team:</span><br>
+                                <span class="kross"> With Bayern Munich:</span>
+
+                                Bundesliga 8 times in seasons: 2002-2003, 2003-2004, 2005-2006, 2007-2008,
+                                2009-2010,<br>
+                                2012-2013, 2013-2014, 2014-2015.<br>
+                                German Cup 7 times in the seasons: 2002-2003, 2003-2004, 2005-2006, 2007-2008,<br>
+                                2009-2010, 2012-2013, 2013-2014.<br>
+                                German League Cup: 2007.<br>
+                                German Super Cup year: 2010.<br>
+                                UEFA Champions League season: 2012-2013.<br>
+                                European Super Cup year: 2013.<br>
+                                Club World Cup year: 2013.<br>
+                                <span class="kross"> With Manchester United:</span><br>
+
+
+                                FA Cup season: 2015-2016.<br>
+                                European League season: 2016-2017.<br>
+                                <span class="kross"> With the German national team:</span><br>
+
+
+                                World Cup Mundial: 2014, and third place twice: 2006, 2010.<br>
+                                European Nations Cup runner-up: 2008.<br>
+                                Third place in the Confederations Cup: 2005.<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/lahm.jfif" alt="">
+                        <div class="info">
+                            <h2>Philipp Lahm </h2>
+                            <p><span class="pelee">Player Profile:</span>
+
+                                Philipp Lahm, German footballer, born in 1983.
+
+                                Lahm occupied the right and left-back position throughout his professional career in the
+                                football fields, and was one of the main pillars of Bayern Munich and the German
+                                national team.
+                                <br>
+                                Lamm was known throughout his career for his high morals, and he never even received a
+                                red card.
+                                <br>
+                                Among the most famous achievements of Lahm winning the Champions League and the World
+                                Cup.
+                                <br><br>
+                            <p>
+                                <span class="pelee"> Clubs he played with:</span>
+
+                                FC Bayern Munich /b/ 2001-2003.<br>
+                                Bayern Munich 2002-2017.<br>
+                                Stuttgart FC (on loan from Bayern Munich) 2003-2005<br>.
+                                Germany national team 2004-2014 (he also participated with the German national under-17,
+                                under-18, under-19, under-20 and under-21 national team).<br>
+
+                                <span class="pelee"> Championships won with his team:</span><br>
+
+                                <span class="kross"> With Bayern Munich:</span><br>
+
+                                Bundesliga 8 times in seasons: 2005–06, 2007–08, 2009–10, 2012–13, 2013–14, 2014–15,
+                                2015–16, 2016–17.<br>
+                                German Cup 6 times in seasons: 2005–06, 2007–08, 2009–10, 2012–13, 2013–14, 2015–16.<br>
+
+                                <span class="kross"> German Bundesliga Cup:</span><br>
+                                2007.<br>
+                                German Super Cup 3 times in the years: 2010, 2012, 2016.<br>
+                                UEFA Champions League season: 2012-2013.<br>
+
+                                <span class="kross"> European Super Cup year:</span><br>
+
+                                2013.<br>
+                                <span class="kross"> Club World Cup year:</span><br>
+                                2013.<br>
+                                <span class="kross"> With Germany:</span><br>
+                                2014 World Cup.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Thomas Muller of Bayern Muenchen during the Bundesliga match between___.jfif"
+                            alt="">
+                        <div class="info">
+                            <h2>Thomas Muller</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Thomas Muller is a German professional footballer who plays for Bayern Munich and the
+                                German national team. Muller plays in the center of the midfield or attack, and also
+                                plays in several different positions, including the right wing. Muller is known for his
+                                outstanding skill in scoring goals, his teamwork, and his stamina, as well as his
+                                distinctive sense of centering, which helped him score or assist a number of crucial
+                                goals.<br>
+                                <span class="pelee"> Clubs he played with:</span>
+
+
+                                Bayern Munich /b/ 2008-2009.<br>
+                                FC Bayern Munich 2008-present.<br>
+                                Germany national team 2010 - until now (he also participated with the German youth team
+                                and the Germany under-21 team).<br>
+                                <span class="pelee"> Championships won with his team:</span><br>
+
+                                <span class="kross"> With Bayern Munich:</span><br>
+
+
+                                Bundesliga nine times in 2009–10, 2012–13, 2013–14, 2014–15, 2015–16, 2016–17, 2017–18,
+                                2018–19, 2019–20.<br>
+                                German Cup six times in the seasons 2009–10, 2012–13, 2013–14, 2015–16, 2018–19,
+                                2019–20.<br>
+                                <span class="kross"> German Super Cup six times in the years:</span><br>
+                                2010, 2012, 2016, 2017, 2018, 2020.<br>
+                                Champions League twice in the 2012–13, 2019–20 seasons.<br>
+                                European Super Cup twice in 2013, 2020.<br>
+                                Club World Cup twice in 2013, 2020.<br>
+                                <span class="kross"> With Germany:</span><br>
+                                2014 World Cup, third place in the 2010 World Cup.<br>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Goalkeeper Oliver Kahn of Munich celebrates the fourth goal during___.jfif"
+                            alt="">
+                        <div class="info">
+                            <h2>Oliver Kahn</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Oliver Kahn was born on June 15, 1969 in Karlsruhe, West Germany at the time. In the
+                                1994-1995 season, he moved to Bayern Munich to spend 14 years in which he achieved the
+                                most important possible titles with the club, such as the German League, the German Cup,
+                                the European Champions League and the Club World Cup. 2002.<br>
+                                <span class="pelee"> Clubs he played with:</span>
+
+
+                                FC Karlsruhe /b / 1987-1990.<br>
+                                Karlsruhe FC 1990-1994.<br>
+                                Bayern Munich 1994-2008.<br>
+                                Germany national team 1995-2006.<br>
+                                <span class="pelee"> Championships won with his team:</span><br>
+
+                                <span class="kross"> With FC Karlsruhe Second Division:</span><br>
+
+
+                                Oberliga Baden-Württemberg Prize 1989-1990 season.<br>
+                                North Baden League 1988-1989 season.<br>
+
+                                <span class="pelee">With Bayern Munich:</span><br>
+                                German Bundesliga (Bundesliga) eight times in seasons: 1996–97, 1998–99, 1999–2000,
+                                2000–01, 2002–03, 2004–05, 2005–06, 2007–08.<br>
+                                <span class="kross">German Cup six times in seasons:</span><br>
+
+                                1997-98, 1999-2000, 2002-03, 2004-05, 2005-06, 2007-08.<br>
+                                <span class="kross">DFB-Ligapokal Super Cup five times in the years:</span><br>
+
+                                1997, 1998, 2000, 2004, 2007.<br>
+                                <span class="kross">UEFA Champions League: </span><br>
+
+                                2000-2001 season.<br>
+                                <span class="kross"> UEFA Cup:</span><br>
+
+                                1995-1997 season.<br>
+                                <span class="kross"> Intercontinental Cup:</span><br>
+
+                                2001.<br>
+                                <span class="pelee"> With Germany:</span><br>
+                                <span class="kross"> European Championship:</span><br>
+                                1996.<br>
+                                <span class="kross"> Third place in the Confederations Cup:</span><br>
+                                in 2005.<br><br>
+                                Runner-up of the 2002 World Cup and third place in the 2006 World Cup.<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/Goalkeeper Manuel Neuer of FC Bayern Muenchen looks on during the___.jfif" alt="">
+                        <div class="info">
+                            <h2>Manuel Neuer</h2>
+                            <p>
+                                <span class="pelee">Player Profile:</span>
+                                Manuel Neuer was born in Gelsenkirchen in Germany on the 27th of March 1986. His talent
+                                and passion for football appeared since he was young. He played his first match with
+                                Schalke FC juniors at the age of five and continued at the club until he signed his
+                                first professional contract with him in 2005. He participated for the first time in A
+                                match in the German league season 2006-2007 with Schalke. He moved to his current club,
+                                Bayern Munich, in 2011.<br>
+                                Neuer won many titles such as the German Bundesliga, the German Cup, the European
+                                Champions League and the 2014 World Cup with his country, and was the best goalkeeper in
+                                that tournament. He was named the best German player in 2011 and 2014, and the best
+                                goalkeeper in the world in 2013, 2014, and 2015<br>
+                                <span class="pelee"> Clubs he played with:</span><br>
+                                Schalke 04 U19 Club 2003-2005.<br>
+                                Schalke 04 B 2004-2006.<br>
+                                Schalke 04 2006-2011.<br>
+                                Bayern Munich 2011-present.<br>
+                                Germany national football team 2009- to the present.<br>
+                                <span class="pelee">Championships won with his team:</span><br>
+                                <span class="kross"> With the Schalke club:</span><br>
+                                German Cup 2010-2011 season.<br>
+                                German League Cup 2005.<br>
+                                <span class="kross"> With Bayern Munich:</span><br>
+                                <span class="pelee"> Bundesliga 9 times in seasons:</span><br>
+                                2012–13, 2013–14, 2014–15, 2015–16, 2016–17, 2017–18,
+                                2018–19, 2019–20, 2020–21.<br>
+                                <span class="pelee"> German Cup 5 times in seasons:</span><br>
+                                2012–13, 2013–14, 2015–16, 2018–19, 2019–20.<br>
+                                <span class="pelee"> German Super Cup 5 times in the years:</span><br>
+                                2012, 2016, 2018, 2020, 2021.<br>
+                                <span class="pelee">Champions League in two seasons:</span><br>
+                                2012-2013, 2019-2020.<br>
+                                European Super Cup twice in 2013, 2020.<br>
+                                Club World Cup twice, in 2013 and 2021.<br>
+                                <span class="kross"> With Germany:</span><br>
+                                With Germany: 2014 World Cup, 2009 European Under-21 Championship.<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End portfolio -->
+
+                      <!-- /* Start Button backup */-->
+<a id="gotop" href="#"><i class="fa-solid fa-up-long"></i></a>
+
+<!--  /* End Button backup */ -->
+
+<a onclick="myFunction()" id="DarkMode"><i class="fa-solid fa-moon"></i></a>
+ <script>
+ function myFunction() {
+ var element = document.body;
+ element.classList.toggle("dark_mode");
+ }
+ </script>
+
+</body>
+
+</html>
